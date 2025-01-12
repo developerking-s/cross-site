@@ -3,7 +3,7 @@
 <head>
     <meta property="og:title" content="Cross Trade Light - Site">
     <meta property="og:description" content="Venha já se juntar ao cross trade o servidor onde se junta a mais de dois mil usuários por todo o discord que gostam de blox fruits o que está a espera entre já!">
-    <meta property="og:image" content="https://cdn.discordapp.com/attachments/1312063537832525834/1328141070521077830/9b41d643eb788b49a370b2e62b7ed036.png">
+    <meta property="og:image" content="https://cdn.discordapp.com/attachments/1312063537832525834/1328141070521077830/9b41d643eb788b49a370b2e62b7ed036.png?ex=67859f42&is=67844dc2&hm=4ff978406cf8e2592d5aed8bc9d98ec0975541b0fe6451206beea3ed53c0cd8c&">
     <meta name="theme-color" content="#ffffff">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,6 +24,7 @@
             padding: 20px;
             text-align: center;
             font-size: 2.5em;
+            animation: fadeIn 3s ease-in-out;
         }
 
         header img {
@@ -33,33 +34,36 @@
             margin-bottom: 10px;
         }
 
-        /* Menu flutuante */
+        /* Animação de fade in */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
         nav {
             background-color: #2c3e50;
             color: white;
-            padding: 10px 0;
+            padding: 15px 0;
             text-align: center;
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         nav a {
             color: white;
-            margin: 0 15px;
+            margin: 0 20px;
             text-decoration: none;
             font-size: 1.2em;
-            transition: color 0.3s ease;
         }
 
         nav a:hover {
-            color: #4c6ef5;
+            text-decoration: underline;
         }
 
         .content {
-            padding: 100px 20px 20px;
+            padding: 80px 20px 20px;
         }
 
         h2 {
@@ -76,6 +80,12 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin: 20px 0;
+            animation: slideIn 2s ease-out;
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(0); }
         }
 
         footer {
@@ -109,6 +119,7 @@
             color: #4682b4;
         }
 
+        /* Estilo do formulário de login */
         .login-form {
             background-color: #fff;
             padding: 20px;
@@ -143,29 +154,37 @@
         .login-form button:hover {
             background-color: #5a7eb1;
         }
+
     </style>
 </head>
 <body>
 
 <header>
-    <img src="https://cdn.discordapp.com/attachments/1312063537832525834/1328141070521077830/9b41d643eb788b49a370b2e62b7ed036.png" alt="Logo Cross Trade Light">
+    <img src="https://cdn.discordapp.com/attachments/1312063537832525834/1328141070521077830/9b41d643eb788b49a370b2e62b7ed036.png?ex=67859f42&is=67844dc2&hm=4ff978406cf8e2592d5aed8bc9d98ec0975541b0fe6451206beea3ed53c0cd8c&" alt="Logo Cross Trade Light">
     <span>Cross Trade Light</span>
 </header>
 
 <nav>
-    <a href="#home">Home</a>
-    <a href="#about">Sobre</a>
-    <a href="#forum">Fórum</a>
-    <a href="#contact">Contato</a>
+    <a href="#">Home</a>
+    <a href="#">Sobre</a>
+    <a href="#">Fórum</a>
+    <a href="#">Contato</a>
 </nav>
 
-<div class="content" id="home">
+<div class="content">
     <div class="description">
         <h2>Bem-vindo ao Cross Trade Light!</h2>
         <p>Cross Trade Light é um servidor de Discord focado em negociação de itens e trocas dentro de um ambiente amigável e organizado. Aqui, você encontrará uma comunidade ativa para fazer novas amizades e trocar experiências sobre seus jogos favoritos!</p>
+        <p>Nosso servidor oferece:</p>
+        <ul>
+            <li>Trocas seguras e rápidas entre jogadores</li>
+            <li>Eventos especiais com prêmios exclusivos</li>
+            <li>Canais de voz e texto para facilitar a comunicação</li>
+            <li>Suporte dedicado para qualquer dúvida ou problema</li>
+        </ul>
     </div>
 
-    <div class="login-form" id="about">
+    <div class="login-form">
         <h2>Entrar</h2>
         <form action="#">
             <input type="text" placeholder="Usuário" required>
@@ -174,7 +193,7 @@
         </form>
     </div>
 
-    <div class="forum" id="forum">
+    <div class="forum">
         <h2>Avaliações</h2>
         <div class="post">
             <span class="author">victor219374:</span>
@@ -184,10 +203,14 @@
             <span class="author">tizer_games._55119:</span>
             <p>Eu tenho algumas skins sobrando! Troquei e ganhei muitas mais, as pessoas são muito legais!</p>
         </div>
+        <div class="post">
+            <span class="author">pablokoha:</span>
+            <p>Ótimo servidor! As trocas são super fáceis e seguras aqui.</p>
+        </div>
     </div>
 </div>
 
-<footer id="contact">
+<footer>
     <p>&copy; 2025 Cross Trade Light | <a href="https://discord.gg/gyYJdG84" style="color: #1e90ff;">Entre no servidor do Discord</a></p>
 </footer>
 

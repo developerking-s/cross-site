@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta property="og:title" content="Cross Trade Light - Site">
-    <meta property="og:description" content="Venha já se juntar ao cross trade o servidor onde se junta a mais de dois mil usuários por todo o discord que gostam de blox fruits o que está a espera entre já!">
+    <meta property="og:description" content="Venha já se juntar ao Cross Trade, o servidor onde se junta a mais de dois mil usuários no Discord que gostam de Blox Fruits!">
     <meta property="og:image" content="https://imgur.com/Y37000m.png">
     <meta name="theme-color" content="#111">
     <meta charset="UTF-8">
@@ -25,18 +25,18 @@
             color: #333;
         }
 
+        /* Cabeçalho */
         header {
             text-align: center;
-            padding: 40px 20px;
-            border-bottom: 2px solid #4c6ef5;
-            margin-bottom: 20px;
+            padding: 30px;
+            background-color: #111;
+            color: white;
         }
 
         header .logo {
-            width: 120px;
-            height: 120px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
-            border: 5px solid #4c6ef5;
             margin-bottom: 20px;
             animation: fadeIn 2s ease;
         }
@@ -46,6 +46,7 @@
             100% { opacity: 1; }
         }
 
+        /* Conteúdo */
         .content {
             padding: 20px;
         }
@@ -58,7 +59,7 @@
             font-size: 1.2em;
         }
 
-        .description {
+        .description, .announcement {
             background-color: #232f3e;
             padding: 20px;
             border-radius: 10px;
@@ -66,37 +67,63 @@
             margin: 20px 0;
         }
 
-        .forum {
-            background-color: #2a3e56;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        .announcement {
+            background-color: #e67e22;
         }
 
-        .forum .post {
+        .announcement h3 {
+            color: white;
+        }
+
+        /* Menu */
+        nav {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
             background-color: #2c3e50;
             padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 8px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            width: 200px;
         }
 
-        .forum .post .author {
-            font-weight: bold;
+        nav a {
+            display: block;
+            color: white;
+            margin: 10px 0;
+            text-decoration: none;
+            font-size: 1.1em;
+            text-align: left;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
             color: #f39c12;
         }
 
-        .forum .post .content {
-            color: #d5d8dc;
+        .theme-switch, .login {
+            margin-top: 20px;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.2s ease;
         }
 
+        .theme-switch:hover, .login:hover {
+            background-color: #4c6ef5;
+            color: white;
+        }
+
+        /* Rodapé */
         footer {
             background-color: #111;
             color: white;
             text-align: center;
-            padding: 20px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            padding: 15px;
             box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
         }
 
@@ -109,56 +136,6 @@
             text-decoration: underline;
         }
 
-        /* Estilo do menu flutuante */
-        nav {
-            position: fixed;
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
-            background-color: #2c3e50;
-            padding: 10px 12px;
-            border-radius: 0 8px 8px 0;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            transition: transform 0.3s ease-in-out;
-            width: 160px;
-        }
-
-        nav a {
-            display: block;
-            color: white;
-            margin: 10px 0;
-            text-decoration: none;
-            font-size: 1.1em;
-            text-align: left;
-        }
-
-        nav a:hover {
-            color: #f39c12;
-        }
-
-        nav .theme-switch, nav .login {
-            margin-top: 20px;
-            padding: 10px;
-            text-align: center;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1em;
-        }
-
-        nav .theme-switch:hover, nav .login:hover {
-            background-color: #4c6ef5;
-            color: white;
-        }
-
-        nav .hidden {
-            transform: translateY(-50%) translateX(-100%);
-        }
-
-        nav a, .theme-switch, .login {
-            transition: background-color 0.2s ease, color 0.2s ease;
-        }
-
     </style>
 </head>
 <body>
@@ -168,6 +145,7 @@
     <h1>Cross Trade Light</h1>
 </header>
 
+<!-- Menu lateral -->
 <nav id="navMenu">
     <a href="#">Home</a>
     <a href="#">Sobre</a>
@@ -177,39 +155,26 @@
     <div class="login" onclick="alert('Login em breve!')">Login</div>
 </nav>
 
+<!-- Conteúdo principal -->
 <div class="content">
-    <div class="description">
-        <h2>Bem-vindo ao Cross Trade Light!</h2>
-        <p>Cross Trade Light é um servidor de Discord focado em negociação de itens e trocas dentro de um ambiente amigável e organizado. Aqui, você encontrará uma comunidade ativa para fazer novas amizades e trocar experiências sobre seus jogos favoritos!</p>
-        <p>Nosso servidor oferece:</p>
-        <ul>
-            <li>Trocas seguras e rápidas entre jogadores</li>
-            <li>Eventos especiais com prêmios exclusivos</li>
-            <li>Canais de voz e texto para facilitar a comunicação</li>
-            <li>Suporte dedicado para qualquer dúvida ou problema</li>
-        </ul>
+    <div class="announcement">
+        <h3>Aviso Importante</h3>
+        <p>Estamos melhorando ainda mais o servidor! Novos recursos estão a caminho para você aproveitar mais a sua experiência!</p>
     </div>
 
-    <div class="forum">
-        <h2>Fórum</h2>
-
-        <div class="post">
-            <span class="author">victor219374:</span>
-            <p class="content">O servidor é muito bom e confiável. Recomendo entrar, vocês vão gostar!</p>
-        </div>
-
-        <div class="post">
-            <span class="author">tizer_games._55119:</span>
-            <p class="content">Eu tenho algumas skins sobrando! Troquei e ganhei muitas mais, as pessoas são muito legais!</p>
-        </div>
-
-        <div class="post">
-            <span class="author">pablokoha:</span>
-            <p class="content">Ótimo servidor! As trocas são super fáceis e seguras aqui.</p>
-        </div>
+    <div class="description">
+        <h2>Bem-vindo ao Cross Trade Light!</h2>
+        <p>O Cross Trade Light é um servidor de Discord focado em negociações e trocas dentro de um ambiente seguro e organizado. Junte-se a uma comunidade ativa de jogadores!</p>
+        <p>Recursos principais:</p>
+        <ul>
+            <li>Trocas seguras e rápidas</li>
+            <li>Eventos e prêmios exclusivos</li>
+            <li>Canais de comunicação eficientes</li>
+        </ul>
     </div>
 </div>
 
+<!-- Rodapé -->
 <footer>
     <p>&copy; 2025 Cross Trade Light | <a href="https://discord.gg/gyYJdG84">Entre no servidor do Discord</a></p>
 </footer>

@@ -27,14 +27,14 @@
 
         header {
             text-align: center;
-            padding: 40px 20px;
+            padding: 20px;
             border-bottom: 2px solid #4c6ef5;
             margin-bottom: 20px;
         }
 
         header .logo {
-            width: 150px;
-            height: 150px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             border: 5px solid #4c6ef5;
             margin-bottom: 20px;
@@ -42,20 +42,59 @@
         }
 
         @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
+            0% { opacity: 0; transform: translateY(-30px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
-        .content {
-            padding: 20px;
+        header h1 {
+            font-size: 2.5em;
+            color: #f39c12;
+            animation: fadeIn 2s ease;
         }
 
-        h2 {
+        /* Menu flutuante */
+        nav {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #2c3e50;
+            padding: 10px 15px;
+            border-radius: 10px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            transition: transform 0.3s ease-in-out;
+            text-align: center;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            margin: 10px 15px;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        nav a:hover {
             color: #f39c12;
         }
 
-        p {
-            font-size: 1.2em;
+        nav .theme-switch, nav .login {
+            margin-top: 10px;
+            padding: 8px;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        nav .theme-switch:hover, nav .login:hover {
+            background-color: #4c6ef5;
+            color: white;
+        }
+
+        /* Seções */
+        .content {
+            padding: 20px;
         }
 
         .description {
@@ -64,6 +103,7 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             margin: 20px 0;
+            animation: fadeIn 2s ease;
         }
 
         .forum {
@@ -71,13 +111,16 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 2s ease;
         }
 
         .forum .post {
             background-color: #2c3e50;
-            padding: 15px;
-            margin-bottom: 15px;
+            padding: 10px;
+            margin-bottom: 10px;
             border-radius: 8px;
+            font-size: 1em;
+            animation: fadeIn 2s ease;
         }
 
         .forum .post .author {
@@ -108,52 +151,10 @@
             text-decoration: underline;
         }
 
-        /* Estilo do menu flutuante */
-        nav {
-            position: fixed;
-            top: 50%;
-            left: 0;
-            transform: translateY(-50%);
-            background-color: #2c3e50;
-            padding: 10px 15px;
-            border-radius: 0 10px 10px 0;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        nav:hover {
-            transform: translateY(-50%) translateX(0);
-        }
-
-        nav a {
-            display: block;
-            color: white;
-            margin: 15px 0;
-            text-decoration: none;
-            font-size: 1.2em;
-            text-align: left;
-        }
-
-        nav a:hover {
-            color: #f39c12;
-        }
-
-        nav .theme-switch, nav .login {
-            margin-top: 20px;
-            padding: 10px;
-            text-align: center;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        nav .theme-switch:hover, nav .login:hover {
-            background-color: #4c6ef5;
-            color: white;
-        }
-
-        nav .hidden {
-            transform: translateY(-50%) translateX(-100%);
+        /* Estilo do tema claro */
+        .light-mode .description, .light-mode .forum .post {
+            background-color: #f4f4f9;
+            color: #333;
         }
     </style>
 </head>
@@ -176,13 +177,12 @@
 <div class="content">
     <div class="description">
         <h2>Bem-vindo ao Cross Trade Light!</h2>
-        <p>Cross Trade Light é um servidor de Discord focado em negociação de itens e trocas dentro de um ambiente amigável e organizado. Aqui, você encontrará uma comunidade ativa para fazer novas amizades e trocar experiências sobre seus jogos favoritos!</p>
-        <p>Nosso servidor oferece:</p>
+        <p>Cross Trade Light é um servidor de Discord focado em negociação de itens e trocas dentro de um ambiente amigável e organizado.</p>
         <ul>
-            <li>Trocas seguras e rápidas entre jogadores</li>
-            <li>Eventos especiais com prêmios exclusivos</li>
-            <li>Canais de voz e texto para facilitar a comunicação</li>
-            <li>Suporte dedicado para qualquer dúvida ou problema</li>
+            <li>Trocas seguras e rápidas</li>
+            <li>Eventos com prêmios exclusivos</li>
+            <li>Canais de voz e texto</li>
+            <li>Suporte dedicado</li>
         </ul>
     </div>
 
@@ -191,17 +191,17 @@
 
         <div class="post">
             <span class="author">victor219374:</span>
-            <p class="content">O servidor é muito bom e confiável. Recomendo entrar, vocês vão gostar!</p>
+            <p class="content">Recomendo o servidor, trocas seguras e rápidas!</p>
         </div>
 
         <div class="post">
             <span class="author">tizer_games._55119:</span>
-            <p class="content">Eu tenho algumas skins sobrando! Troquei e ganhei muitas mais, as pessoas são muito legais!</p>
+            <p class="content">Troquei skins e ganhei muito mais!</p>
         </div>
 
         <div class="post">
             <span class="author">pablokoha:</span>
-            <p class="content">Ótimo servidor! As trocas são super fáceis e seguras aqui.</p>
+            <p class="content">Muito bom, as trocas são muito fáceis!</p>
         </div>
     </div>
 </div>

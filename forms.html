@@ -55,7 +55,8 @@
 
 <h1 style="text-align: center;">Formulário para Entrar na Staff</h1>
 
-<form id="staff-form" action="https://formspree.io/renafernandesjorge11@gmail.com" method="POST">
+<!-- Formulário de contato -->
+<form action="https://formsubmit.co/YOUR_EMAIL@gmail.com" method="POST">
     <label for="nome">Qual o seu nome?</label>
     <input type="text" id="nome" name="nome" required>
 
@@ -72,6 +73,13 @@
 </form>
 
 <div class="message" id="message">Formulário enviado com sucesso!</div>
+
+<script>
+    // Exibe mensagem de sucesso após envio
+    document.querySelector("form").addEventListener("submit", function() {
+        document.getElementById("message").style.display = "block";
+    });
+</script>
 
 </body>
 </html>

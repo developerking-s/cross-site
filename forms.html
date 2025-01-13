@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário para Entrar na Staff</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: auto;
+        }
+        label {
+            font-size: 1.1em;
+            margin: 10px 0;
+            display: block;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #2563eb;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.1em;
+        }
+        button:hover {
+            background-color: #1e3a8a;
+        }
+        .message {
+            color: green;
+            text-align: center;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<h1 style="text-align: center;">Formulário para Entrar na Staff</h1>
+
+<form id="staff-form" action="https://formspree.io/renafernandesjorge11@gmail.com" method="POST">
+    <label for="nome">Qual o seu nome?</label>
+    <input type="text" id="nome" name="nome" required>
+
+    <label for="idade">Qual a sua idade?</label>
+    <input type="number" id="idade" name="idade" required>
+
+    <label for="motivacao">Por que queres entrar na staff?</label>
+    <textarea id="motivacao" name="motivacao" rows="4" required></textarea>
+
+    <label for="habilidades">Sabes mexer com o quê? (ex: Discord, moderar chats, etc.)</label>
+    <textarea id="habilidades" name="habilidades" rows="4" required></textarea>
+
+    <button type="submit">Enviar</button>
+</form>
+
+<div class="message" id="message">Formulário enviado com sucesso!</div>
+
+</body>
+</html>

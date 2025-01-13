@@ -1,45 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta property="og:title" content="Cross Trade Light - Fórum">
+   <meta property="og:title" content="Cross Trade Light - Fórum">
     <meta property="og:description" content="Explore e se aventure no nosso fórum sobre vários assuntos desde blox friuts a muitos mais">
     <meta property="og:image" content="https://imgur.com/Y37000m.png">
-    <meta name="theme-color" content="#111"> 
- <meta charset="UTF-8">
+    <meta name="theme-color" content="#111">   
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fórum do Cross</title>
+    <title>Fórum Cross</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #f0f8ff;
-            color: #003366;
             margin: 0;
             padding: 0;
         }
         .container {
-            width: 80%;
+            width: 90%;
+            max-width: 800px;
             margin: 50px auto;
-            background-color: white;
+            background-color: #fff;
+            padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
         }
-        h1 {
+        h1, h2 {
             text-align: center;
             color: #0066cc;
         }
-        .form-container {
-            margin-bottom: 30px;
+        .hidden {
+            display: none;
         }
-        textarea {
+        .login-container, .forum-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="text"], input[type="password"], textarea {
             width: 100%;
-            height: 100px;
+            max-width: 400px;
             padding: 10px;
-            border-radius: 4px;
+            margin: 10px 0;
             border: 1px solid #ccc;
+            border-radius: 4px;
             font-size: 16px;
-            margin-bottom: 10px;
-            resize: none;
         }
         button {
             background-color: #0066cc;
@@ -54,6 +58,7 @@
             background-color: #004d99;
         }
         .messages {
+            width: 100%;
             list-style-type: none;
             padding: 0;
         }
@@ -64,47 +69,122 @@
             border-radius: 4px;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
         }
+        .message .author {
+            font-weight: bold;
+            color: #003366;
+        }
+        .logout {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .logout button {
+            background-color: #cc0000;
+        }
+        .logout button:hover {
+            background-color: #990000;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Fórum de Discussão</h1>
-        
-        <div class="form-container">
+        <!-- Login Section -->
+        <div class="login-container" id="loginSection">
+            <h1>Bem-vindo ao Fórum</h1>
+            <p>Faça login para participar das discussões.</p>
+            <input type="text" id="username" placeholder="Digite seu nome de usuário">
+            <input type="password" id="password" placeholder="Digite sua senha">
+            <button onclick="login()">Entrar</button>
+        </div>
+
+        <!-- Forum Section -->
+        <div class="forum-container hidden" id="forumSection">
+            <h2>Fórum de Discussão</h2>
+            <p>Bem-vindo, <span id="loggedInUser"></span>!</p>
+            
             <textarea id="messageInput" placeholder="Digite sua mensagem..."></textarea>
             <button onclick="addMessage()">Enviar</button>
+
+            <ul class="messages" id="messagesList">
+                <!-- As mensagens serão exibidas aqui -->
+            </ul>
+
+            <div class="logout">
+                <button onclick="logout()">Sair</button>
+            </div>
         </div>
-        
-        <ul class="messages" id="messagesList">
-            <!-- As mensagens serão exibidas aqui -->
-        </ul>
     </div>
 
     <script>
-        let messages = [];
+        // Simulação de usuários cadastrados
+        const users = [
+            { username: "admin", password: "1234" },
+            { username: "user1", password: "senha1" },
+        ];
 
-        function addMessage() {
-            const messageInput = document.getElementById('messageInput');
-            const messageText = messageInput.value.trim();
-            
-            if (messageText !== "") {
-                // Adiciona a nova mensagem ao array
-                messages.push(messageText);
-                messageInput.value = ""; // Limpa o campo de input
+        // Verifica se o usuário está logado
+        window.onload = () => {
+            const loggedInUser = localStorage.getItem("loggedInUser");
+            if (loggedInUser) {
+                showForum(loggedInUser);
+            }
+        };
 
-                // Atualiza a exibição das mensagens
-                displayMessages();
+        // Função de login
+        function login() {
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            const user = users.find(u => u.username === username && u.password === password);
+            if (user) {
+                localStorage.setItem("loggedInUser", username);
+                showForum(username);
+            } else {
+                alert("Usuário ou senha inválidos!");
             }
         }
 
-        function displayMessages() {
-            const messagesList = document.getElementById('messagesList');
+        // Função para exibir o fórum
+        function showForum(username) {
+            document.getElementById("loginSection").classList.add("hidden");
+            document.getElementById("forumSection").classList.remove("hidden");
+            document.getElementById("loggedInUser").textContent = username;
+            loadMessages();
+        }
+
+        // Função de logout
+        function logout() {
+            localStorage.removeItem("loggedInUser");
+            document.getElementById("loginSection").classList.remove("hidden");
+            document.getElementById("forumSection").classList.add("hidden");
+        }
+
+        // Função para adicionar mensagem
+        function addMessage() {
+            const messageInput = document.getElementById("messageInput");
+            const messageText = messageInput.value.trim();
+            const loggedInUser = localStorage.getItem("loggedInUser");
+
+            if (messageText !== "") {
+                const messages = JSON.parse(localStorage.getItem("messages")) || [];
+                messages.push({ author: loggedInUser, text: messageText });
+                localStorage.setItem("messages", JSON.stringify(messages));
+
+                messageInput.value = ""; // Limpa o campo
+                loadMessages();
+            }
+        }
+
+        // Função para carregar as mensagens
+        function loadMessages() {
+            const messages = JSON.parse(localStorage.getItem("messages")) || [];
+            const messagesList = document.getElementById("messagesList");
+
             messagesList.innerHTML = ""; // Limpa a lista de mensagens
 
             messages.forEach(message => {
-                const li = document.createElement('li');
-                li.classList.add('message');
-                li.textContent = message;
+                const li = document.createElement("li");
+                li.classList.add("message");
+                li.innerHTML = `<span class="author">${message.author}:</span> ${message.text}`;
                 messagesList.appendChild(li);
             });
         }

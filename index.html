@@ -28,7 +28,7 @@
         /* Cabeçalho */
         header {
             text-align: center;
-            padding: 30px;
+            padding: 20px;
             background-color: #1e3a8a; /* Azul escuro */
             color: white;
         }
@@ -38,12 +38,6 @@
             height: 100px;
             border-radius: 50%;
             margin-bottom: 20px;
-            animation: fadeIn 2s ease;
-        }
-
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
         }
 
         /* Menu horizontal */
@@ -79,21 +73,35 @@
             font-size: 1.2em;
         }
 
-        .description, .announcement {
-            background-color: #2d3748; /* Cinza escuro */
+        .description {
+            background-color: #232f3e; /* Cinza escuro */
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             margin: 20px 0;
         }
 
-        .announcement {
-            background-color: #ffcc00; /* Amarelo claro para o aviso */
-            color: #111;
+        .forum {
+            background-color: #2a3e56; /* Azul escuro */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
-        .announcement h3 {
-            color: black;
+        .forum .post {
+            background-color: #2c3e50; /* Cinza escuro */
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+
+        .forum .post .author {
+            font-weight: bold;
+            color: #f39c12; /* Amarelo */
+        }
+
+        .forum .post .content {
+            color: #d5d8dc; /* Cinza claro */
         }
 
         /* Rodapé */
@@ -133,11 +141,6 @@
 
 <!-- Conteúdo principal -->
 <div class="content">
-    <div class="announcement">
-        <h3>Aviso Importante</h3>
-        <p>Estamos melhorando ainda mais o servidor! Novos recursos estão a caminho para você aproveitar mais a sua experiência!</p>
-    </div>
-
     <div class="description">
         <h2>Bem-vindo ao Cross Trade Light!</h2>
         <p>O Cross Trade Light é um servidor de Discord focado em negociações e trocas dentro de um ambiente seguro e organizado. Junte-se a uma comunidade ativa de jogadores!</p>
@@ -147,6 +150,25 @@
             <li>Eventos e prêmios exclusivos</li>
             <li>Canais de comunicação eficientes</li>
         </ul>
+    </div>
+
+    <div class="forum">
+        <h2>Fórum</h2>
+
+        <div class="post">
+            <span class="author">victor219374:</span>
+            <p class="content">O servidor é muito bom e confiável. Recomendo entrar, vocês vão gostar!</p>
+        </div>
+
+        <div class="post">
+            <span class="author">tizer_games._55119:</span>
+            <p class="content">Eu tenho algumas skins sobrando! Troquei e ganhei muitas mais, as pessoas são muito legais!</p>
+        </div>
+
+        <div class="post">
+            <span class="author">pablokoha:</span>
+            <p class="content">Ótimo servidor! As trocas são super fáceis e seguras aqui.</p>
+        </div>
     </div>
 </div>
 

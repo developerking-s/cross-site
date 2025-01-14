@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta property="og:title" content="Cross Trade Light - Loja">
-    <meta property="og:description" content="Veja a nossa lojinha os benefícios e mais sobre">
-    <meta property="og:image" content="https://imgur.com/Y37000m.png">
-    <meta name="theme-color" content="#0056b3">
-<meta charset="UTF-8">
+  <meta property="og:title" content="Cross Trade Light - Loja">
+  <meta property="og:description" content="Veja a nossa lojinha os benefícios e mais sobre">
+  <meta property="og:image" content="https://imgur.com/Y37000m.png">
+  <meta name="theme-color" content="#0056b3">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Loja CF-Trade</title>
   <style>
@@ -14,14 +14,48 @@
       font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f9ff;
       color: #333;
       text-align: center;
+      overflow: hidden;
+    }
+
+    /* Fundo com animação */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #f4f9ff;
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(45deg, #004080, #004080 10px, transparent 10px, transparent 20px);
+      opacity: 0.5;
+      z-index: -1;
+      animation: fadeSquares 4s infinite alternate;
+    }
+
+    @keyframes fadeSquares {
+      0%, 100% {
+        opacity: 0.3;
+      }
+      50% {
+        opacity: 0.6;
+      }
     }
 
     /* Cabeçalho */
     header {
-      background-color: #004080;
+      background-color: rgba(0, 64, 128, 0.9);
       color: #fff;
       padding: 20px 0;
     }
@@ -39,6 +73,8 @@
       background-color: #ffffff;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 1;
     }
 
     .benefits h2 {
@@ -86,9 +122,11 @@
     footer {
       margin-top: 20px;
       padding: 10px;
-      background-color: #004080;
+      background-color: rgba(0, 64, 128, 0.9);
       color: #fff;
       font-size: 14px;
+      position: relative;
+      z-index: 1;
     }
   </style>
 </head>

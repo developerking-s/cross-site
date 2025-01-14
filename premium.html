@@ -15,49 +15,16 @@
       margin: 0;
       padding: 0;
       color: #333;
+      background-color: #f4f9ff;
       text-align: center;
-      overflow: hidden;
-    }
-
-    /* Fundo com animação */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #f4f9ff;
-      z-index: -2;
-    }
-
-    body::after {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: repeating-linear-gradient(45deg, #004080, #004080 10px, transparent 10px, transparent 20px);
-      opacity: 0.5;
-      z-index: -1;
-      animation: fadeSquares 4s infinite alternate;
-    }
-
-    @keyframes fadeSquares {
-      0%, 100% {
-        opacity: 0.3;
-      }
-      50% {
-        opacity: 0.6;
-      }
     }
 
     /* Cabeçalho */
     header {
-      background-color: rgba(0, 64, 128, 0.9);
+      background-color: #004080;
       color: #fff;
       padding: 20px 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     header h1 {
@@ -73,8 +40,6 @@
       background-color: #ffffff;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      position: relative;
-      z-index: 1;
     }
 
     .benefits h2 {
@@ -111,22 +76,49 @@
       padding: 12px 30px;
       border-radius: 5px;
       font-size: 18px;
-      transition: background-color 0.3s ease;
+      transition: transform 0.3s ease, background-color 0.3s ease;
     }
 
     .cta-button a:hover {
       background-color: #0066cc;
+      transform: scale(1.05);
+    }
+
+    /* Embeds fluidas para pagamentos e redes sociais */
+    .payment-section, .social-section {
+      margin: 30px auto;
+      padding: 20px;
+      max-width: 800px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .payment-section h2, .social-section h2 {
+      color: #004080;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .payment-options img, .social-links img {
+      width: 50px;
+      margin: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .payment-options img:hover, .social-links img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
     /* Rodapé */
     footer {
       margin-top: 20px;
       padding: 10px;
-      background-color: rgba(0, 64, 128, 0.9);
+      background-color: #004080;
       color: #fff;
       font-size: 14px;
-      position: relative;
-      z-index: 1;
     }
   </style>
 </head>
@@ -146,6 +138,28 @@
     </ul>
     <div class="cta-button">
       <a href="#">Adquirir Premium Agora</a>
+    </div>
+  </section>
+
+  <!-- Seção de pagamentos -->
+  <section class="payment-section">
+    <h2>Formas de Pagamento</h2>
+    <div class="payment-options">
+      <img src="https://img.icons8.com/color/48/paypal.png" alt="PayPal">
+      <img src="https://img.icons8.com/color/48/mastercard.png" alt="MasterCard">
+      <img src="https://img.icons8.com/color/48/visa.png" alt="Visa">
+      <img src="https://img.icons8.com/color/48/pix.png" alt="Pix">
+    </div>
+  </section>
+
+  <!-- Seção de redes sociais -->
+  <section class="social-section">
+    <h2>Nos Siga nas Redes Sociais</h2>
+    <div class="social-links">
+      <img src="https://img.icons8.com/color/48/instagram-new.png" alt="Instagram">
+      <img src="https://img.icons8.com/color/48/facebook-new.png" alt="Facebook">
+      <img src="https://img.icons8.com/color/48/twitter-squared.png" alt="Twitter">
+      <img src="https://img.icons8.com/color/48/discord-logo.png" alt="Discord">
     </div>
   </section>
 

@@ -1,13 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Cross Trade Light - Site">
     <meta property="og:description" content="Venha já se juntar ao Cross Trade, o servidor onde se junta a mais de dois mil usuários no Discord que gostam de Blox Fruits!">
     <meta property="og:image" content="https://imgur.com/Y37000m.png">
     <meta name="theme-color" content="#111">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cross Trade Light - Fórum e Servidor Discord</title>
     <style>
         /* Estilo geral */
@@ -20,12 +19,6 @@
             overflow-x: hidden;
         }
 
-        .light-mode {
-            background-color: #f4f4f9;
-            color: #333;
-        }
-
-        /* Cabeçalho */
         header {
             text-align: center;
             padding: 20px;
@@ -33,55 +26,40 @@
             color: white;
         }
 
-        header .logo {
+        header img {
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            margin-bottom: 20px;
         }
 
-        /* Menu flutuante */
-        .menu-toggle {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1000;
-            background-color: #2563eb;
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .menu {
-            position: fixed;
-            top: 0;
-            left: -250px;
-            width: 250px;
-            height: 100%;
-            background-color: #1e3a8a;
-            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+        /* Barra de navegação */
+        .nav-bar {
             display: flex;
-            flex-direction: column;
-            padding: 20px;
-            transition: left 0.3s ease;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
         }
 
-        .menu.active {
-            left: 0;
-        }
-
-        .menu a {
-            color: white;
+        .nav-bar a {
             text-decoration: none;
-            margin: 10px 0;
-            font-size: 1.2em;
-            transition: color 0.3s ease;
+            color: #fff;
+            margin: 0 15px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        .menu a:hover {
-            color: #ffcc00;
+        .nav-bar a:first-child {
+            background-color: #e0e0e0;
+            color: #000;
+        }
+
+        .nav-bar a:hover {
+            background-color: #1e3a8a;
+            color: #fff;
         }
 
         /* Conteúdo principal */
@@ -97,7 +75,7 @@
             font-size: 1.2em;
         }
 
-        /* Avaliações com animações */
+        /* Avaliações */
         .forum {
             padding: 20px;
         }
@@ -162,49 +140,41 @@
 <body>
 
 <header>
-    <img class="logo" src="https://imgur.com/Y37000m.png" alt="Logo Cross Trade Light">
+    <img src="https://imgur.com/Y37000m.png" alt="Logo">
     <h1>Cross Trade Light</h1>
 </header>
 
-<!-- Menu flutuante -->
-<div class="menu-toggle" onclick="toggleMenu()">☰ Menu</div>
-<div class="menu">
-    <a href="#home">Home</a>
-    <a href="termos.html">Termos</a>
-    <a href="fórum.html">Fórum</a>
-    <a href="#contato">Contato</a>
+<!-- Barra de navegação -->
+<div class="nav-bar">
+    <a href="#tema">Tema</a>
+    <a href="#premium">Premium</a>
+    <a href="#comandos">Comandos</a>
+    <a href="#termos">Termos</a>
 </div>
 
 <!-- Conteúdo principal -->
 <div class="content">
-    <div class="description">
-        <h2>Bem-vindo ao Cross Trade Light!</h2>
-        <p>O Cross Trade Light é um servidor de Discord focado em negociações e trocas dentro de um ambiente seguro e organizado. Junte-se a uma comunidade ativa de jogadores!</p>
-        <p>Recursos principais:</p>
-        <ul>
-            <li>Trocas seguras e rápidas</li>
-            <li>Eventos e prêmios exclusivos</li>
-            <li>Canais de comunicação eficientes</li>
-        </ul>
+    <h2>Bem-vindo ao Cross Trade Light!</h2>
+    <p>O Cross Trade Light é um servidor de Discord focado em negociações e trocas dentro de um ambiente seguro e organizado. Junte-se a uma comunidade ativa de jogadores!</p>
+</div>
+
+<!-- Avaliações -->
+<div class="forum">
+    <h2>Avaliações</h2>
+
+    <div class="post">
+        <span class="author">victor219374:</span>
+        <p class="content">O servidor é muito bom e confiável. Recomendo entrar, vocês vão gostar!</p>
     </div>
 
-    <div class="forum">
-        <h2>Avaliações</h2>
+    <div class="post">
+        <span class="author">tizer_games._55119:</span>
+        <p class="content">Eu tenho algumas skins sobrando! Troquei e ganhei muitas mais, as pessoas são muito legais!</p>
+    </div>
 
-        <div class="post">
-            <span class="author">victor219374:</span>
-            <p class="content">O servidor é muito bom e confiável. Recomendo entrar, vocês vão gostar!</p>
-        </div>
-
-        <div class="post">
-            <span class="author">tizer_games._55119:</span>
-            <p class="content">Eu tenho algumas skins sobrando! Troquei e ganhei muitas mais, as pessoas são muito legais!</p>
-        </div>
-
-        <div class="post">
-            <span class="author">pablokoha:</span>
-            <p class="content">Ótimo servidor! As trocas são super fáceis e seguras aqui.</p>
-        </div>
+    <div class="post">
+        <span class="author">pablokoha:</span>
+        <p class="content">Ótimo servidor! As trocas são super fáceis e seguras aqui.</p>
     </div>
 </div>
 
@@ -212,13 +182,6 @@
 <footer>
     <p>&copy; 2025 Cross Trade Light | <a href="https://discord.gg/gyYJdG84">Entre no servidor do Discord</a></p>
 </footer>
-
-<script>
-    function toggleMenu() {
-        const menu = document.querySelector('.menu');
-        menu.classList.toggle('active');
-    }
-</script>
 
 </body>
 </html>

@@ -51,14 +51,16 @@
         .navbar {
             position: fixed;
             top: 0;
+            left: 0;
             width: 100%;
             background-color: #0056b3;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
             z-index: 1000;
             display: flex;
             justify-content: center;
-            padding: 10px 0;
+            padding: 5px 0; /* Diminuir o padding */
             flex-wrap: wrap;
+            box-sizing: border-box;
         }
 
         .navbar ul {
@@ -69,15 +71,15 @@
         }
 
         .navbar li {
-            margin: 0 15px;
+            margin: 0 10px; /* Diminuir a margem */
             position: relative;
         }
 
         .navbar a {
             text-decoration: none;
             color: white;
-            font-size: 1.2em;
-            padding: 8px 12px;
+            font-size: 1em; /* Diminuir o tamanho da fonte */
+            padding: 5px 10px; /* Diminuir o padding */
             transition: all 0.3s ease;
         }
 

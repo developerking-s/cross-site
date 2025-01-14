@@ -16,115 +16,110 @@
             padding: 0;
             background-color: #111;
             color: #fff;
-            overflow-x: hidden;
         }
 
+        /* Cabeçalho */
         header {
-            text-align: center;
-            padding: 20px;
             background-color: #1e3a8a;
-            color: white;
+            padding: 20px 0;
+            text-align: center;
         }
 
-        header img {
-            width: 100px;
-            height: 100px;
+        header .logo {
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
         }
 
-        /* Barra de navegação */
-        .nav-bar {
+        header h1 {
+            font-size: 2.5em;
+            margin: 10px 0;
+        }
+
+        /* Menu profissional */
+        .navbar {
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #000;
-            padding: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            background-color: #111;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
-        .nav-bar a {
+        .navbar a {
             text-decoration: none;
             color: #fff;
-            margin: 0 15px;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 1em;
+            margin: 0 20px;
+            font-size: 1.1em;
+            padding: 10px 20px;
+            border-radius: 30px;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        .nav-bar a:first-child {
-            background-color: #e0e0e0;
-            color: #000;
+        .navbar a:hover {
+            background-color: #2563eb;
+            color: #fff;
         }
 
-        .nav-bar a:hover {
+        .navbar a.active {
             background-color: #1e3a8a;
             color: #fff;
         }
 
         /* Conteúdo principal */
         .content {
-            padding: 20px;
+            padding: 50px 20px;
+            text-align: center;
         }
 
-        h2 {
+        .content h2 {
+            font-size: 2em;
             color: #1e3a8a;
+            margin-bottom: 20px;
         }
 
-        p {
+        .content p {
             font-size: 1.2em;
+            margin: 10px 0;
         }
 
         /* Avaliações */
         .forum {
             padding: 20px;
-        }
-
-        .forum .post {
             background-color: #2a3e56;
-            padding: 20px;
-            margin-bottom: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.5s forwards;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         }
 
-        .forum .post:nth-child(2) {
-            animation-delay: 0.2s;
+        .forum h3 {
+            font-size: 1.8em;
+            color: #fff;
+            margin-bottom: 20px;
         }
 
-        .forum .post:nth-child(3) {
-            animation-delay: 0.4s;
+        .post {
+            background-color: #3b4b63;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
 
-        .forum .post .author {
+        .post .author {
             font-weight: bold;
             color: #f39c12;
         }
 
-        .forum .post .content {
+        .post .content {
             color: #d5d8dc;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         /* Rodapé */
         footer {
             background-color: #1e3a8a;
-            color: white;
+            color: #fff;
             text-align: center;
-            padding: 15px;
+            padding: 15px 0;
         }
 
         footer a {
@@ -140,26 +135,36 @@
 <body>
 
 <header>
-    <img src="https://imgur.com/Y37000m.png" alt="Logo">
+    <img src="https://imgur.com/Y37000m.png" alt="Logo Cross Trade Light" class="logo">
     <h1>Cross Trade Light</h1>
 </header>
 
-<!-- Barra de navegação -->
-<<nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<!-- Menu profissional -->
+<div class="navbar">
+    <a href="#tema" class="active">Tema</a>
+    <a href="#premium">Premium</a>
+    <a href="#comandos">Comandos</a>
+    <a href="#termos">Termos</a>
+    <a href="#forum">Fórum</a>
+    <a href="#contato">Contato</a>
+</div>
 
 <!-- Conteúdo principal -->
 <div class="content">
     <h2>Bem-vindo ao Cross Trade Light!</h2>
     <p>O Cross Trade Light é um servidor de Discord focado em negociações e trocas dentro de um ambiente seguro e organizado. Junte-se a uma comunidade ativa de jogadores!</p>
+
+    <p>Recursos principais:</p>
+    <ul>
+        <li>Trocas seguras e rápidas</li>
+        <li>Eventos e prêmios exclusivos</li>
+        <li>Canais de comunicação eficientes</li>
+    </ul>
 </div>
 
 <!-- Avaliações -->
 <div class="forum">
-    <h2>Avaliações</h2>
+    <h3>Avaliações</h3>
 
     <div class="post">
         <span class="author">victor219374:</span>

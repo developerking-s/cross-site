@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,14 +15,13 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #111; /* Preto */
+            background-color: #111;
             color: #fff;
             overflow-x: hidden;
-            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .light-mode {
-            background-color: #f4f4f9; /* Branco */
+            background-color: #f4f4f9;
             color: #333;
         }
 
@@ -29,7 +29,7 @@
         header {
             text-align: center;
             padding: 20px;
-            background-color: #1e3a8a; /* Azul escuro */
+            background-color: #1e3a8a;
             color: white;
         }
 
@@ -40,88 +40,123 @@
             margin-bottom: 20px;
         }
 
-        /* Menu horizontal */
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #2563eb; /* Azul claro */
-            padding: 10px 0;
+        /* Menu flutuante */
+        .menu-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background-color: #2563eb;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        nav a {
+        .menu {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #1e3a8a;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            transition: left 0.3s ease;
+        }
+
+        .menu.active {
+            left: 0;
+        }
+
+        .menu a {
             color: white;
             text-decoration: none;
-            font-size: 1.1em;
-            margin: 0 20px;
+            margin: 10px 0;
+            font-size: 1.2em;
             transition: color 0.3s ease;
         }
 
-        nav a:hover {
-            color: #ffcc00; /* Amarelo claro para o hover */
+        .menu a:hover {
+            color: #ffcc00;
         }
 
-        /* Conteúdo */
+        /* Conteúdo principal */
         .content {
             padding: 20px;
         }
 
         h2 {
-            color: #1e3a8a; /* Azul escuro */
+            color: #1e3a8a;
         }
 
         p {
             font-size: 1.2em;
         }
 
-        .description {
-            background-color: #232f3e; /* Cinza escuro */
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            margin: 20px 0;
-        }
-
+        /* Avaliações com animações */
         .forum {
-            background-color: #2a3e56; /* Azul escuro */
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
         .forum .post {
-            background-color: #2c3e50; /* Cinza escuro */
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 8px;
+            background-color: #2a3e56;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s forwards;
+        }
+
+        .forum .post:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .forum .post:nth-child(3) {
+            animation-delay: 0.4s;
         }
 
         .forum .post .author {
             font-weight: bold;
-            color: #f39c12; /* Amarelo */
+            color: #f39c12;
         }
 
         .forum .post .content {
-            color: #d5d8dc; /* Cinza claro */
+            color: #d5d8dc;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Rodapé */
         footer {
-            background-color: #1e3a8a; /* Azul escuro */
+            background-color: #1e3a8a;
             color: white;
             text-align: center;
             padding: 15px;
-            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
         }
 
         footer a {
-            color: #4c6ef5; /* Azul claro */
+            color: #4c6ef5;
             text-decoration: none;
         }
 
         footer a:hover {
             text-decoration: underline;
         }
-
     </style>
 </head>
 <body>
@@ -131,13 +166,14 @@
     <h1>Cross Trade Light</h1>
 </header>
 
-<!-- Menu horizontal -->
-<nav>
+<!-- Menu flutuante -->
+<div class="menu-toggle" onclick="toggleMenu()">☰ Menu</div>
+<div class="menu">
     <a href="#home">Home</a>
     <a href="termos.html">Termos</a>
     <a href="fórum.html">Fórum</a>
     <a href="#contato">Contato</a>
-</nav>
+</div>
 
 <!-- Conteúdo principal -->
 <div class="content">
@@ -178,8 +214,9 @@
 </footer>
 
 <script>
-    function toggleTheme() {
-        document.body.classList.toggle('light-mode');
+    function toggleMenu() {
+        const menu = document.querySelector('.menu');
+        menu.classList.toggle('active');
     }
 </script>
 

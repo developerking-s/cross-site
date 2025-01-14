@@ -17,13 +17,13 @@
             background-color: #f4f4f9;
             color: #333;
             overflow-x: hidden;
-            padding-top: 50px; /* Espaço para o menu fixo */
+            padding-top: 40px; /* Ajuste para o menu reduzido */
         }
 
         /* Menu Flutuante Transparente */
         .navbar {
             position: fixed;
-            top: -60px; /* Inicialmente fora da tela */
+            top: -50px; /* Inicialmente fora da tela */
             left: 0;
             width: 100%;
             background-color: rgba(0, 86, 179, 0.9); /* Azul transparente */
@@ -31,7 +31,7 @@
             z-index: 1000;
             display: flex;
             justify-content: center;
-            padding: 10px 0;
+            padding: 8px 0; /* Reduzido */
             flex-wrap: wrap;
             box-sizing: border-box;
             transition: top 0.3s ease; /* Animação suave para o menu entrar */
@@ -45,15 +45,15 @@
         }
 
         .navbar li {
-            margin: 0 20px;
+            margin: 0 15px; /* Reduzido */
             position: relative;
         }
 
         .navbar a {
             text-decoration: none;
             color: white;
-            font-size: 1.1em;
-            padding: 5px 15px;
+            font-size: 1em; /* Menor */
+            padding: 5px 12px; /* Ajuste para um tamanho mais compacto */
             transition: all 0.3s ease;
         }
 
@@ -360,7 +360,7 @@
         if (window.scrollY > 50) {
             navbar.style.top = '0';
         } else {
-            navbar.style.top = '-60px';
+            navbar.style.top = '-50px'; // Ajuste para o menu pequeno
         }
     };
 </script>

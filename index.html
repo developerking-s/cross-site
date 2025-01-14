@@ -6,71 +6,90 @@
     <meta property="og:title" content="Cross Trade Light - Site">
     <meta property="og:description" content="Venha já se juntar ao Cross Trade, o servidor onde se junta a mais de dois mil usuários no Discord que gostam de Blox Fruits!">
     <meta property="og:image" content="https://imgur.com/Y37000m.png">
-    <meta name="theme-color" content="#111">
-    <title>Cross Trade Light - Fórum e Servidor Discord</title>
+    <meta name="theme-color" content="#0056b3">
+    <title>Cross Trade Light - Servidor e Comunidade</title>
     <style>
-        /* Estilo geral */
+        /* Estilo Geral */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #111;
-            color: #fff;
+            background-color: #f4f4f9;
+            color: #333;
         }
 
-        /* Cabeçalho */
-        header {
-            text-align: center;
-            padding: 20px;
-            margin-top: 70px;
-        }
-
-        header .logo {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-        }
-
-        header h1 {
-            font-size: 2.5em;
-        }
-
-        /* Menu flutuante */
+        /* Menu Navegação */
         .navbar {
             position: fixed;
             top: 0;
-            left: 0;
             width: 100%;
-            background-color: #1e3a8a;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 10px 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background-color: #0056b3;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
             z-index: 1000;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px 20px;
         }
 
         .navbar a {
             text-decoration: none;
             color: #fff;
-            margin: 0 20px;
-            font-size: 1.1em;
-            padding: 10px 20px;
-            border-radius: 30px;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            font-size: 1em;
+            margin: 0 15px;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
 
         .navbar a:hover {
-            background-color: #2563eb;
-            color: #fff;
+            background-color: #0073e6;
         }
 
-        .navbar a.active {
-            background-color: #111;
-            color: #fff;
+        .navbar .logo {
+            font-size: 1.5em;
+            font-weight: bold;
         }
 
-        /* Conteúdo principal */
+        /* Banner */
+        .banner {
+            background: url('https://imgur.com/Y37000m.png') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .banner::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+
+        .banner h1 {
+            font-size: 3em;
+            z-index: 1;
+        }
+
+        .banner p {
+            font-size: 1.5em;
+            z-index: 1;
+        }
+
+        /* Conteúdo */
         .content {
             padding: 50px 20px;
             text-align: center;
@@ -78,57 +97,52 @@
 
         .content h2 {
             font-size: 2em;
-            color: #1e3a8a;
+            color: #0056b3;
             margin-bottom: 20px;
         }
 
         .content p {
             font-size: 1.2em;
-            margin: 10px 0;
+            line-height: 1.6em;
         }
 
-        /* Avaliações */
-        .forum {
-            padding: 20px;
-            background-color: #2a3e56;
+        /* Cards */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background-color: white;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            margin: 30px 0;
-        }
-
-        .forum h3 {
-            font-size: 1.8em;
-            color: #fff;
-            margin-bottom: 20px;
-        }
-
-        .post {
-            background-color: #3b4b63;
-            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            text-align: left;
         }
 
-        .post .author {
-            font-weight: bold;
-            color: #f39c12;
+        .card h3 {
+            color: #0056b3;
+            margin-bottom: 15px;
         }
 
-        .post .content {
-            color: #d5d8dc;
+        .card p {
+            font-size: 1em;
+            line-height: 1.5em;
         }
 
         /* Rodapé */
         footer {
-            background-color: #1e3a8a;
-            color: #fff;
+            background-color: #0056b3;
+            color: white;
             text-align: center;
             padding: 15px 0;
+            margin-top: 50px;
         }
 
         footer a {
-            color: #4c6ef5;
+            color: #ffdd40;
             text-decoration: none;
         }
 
@@ -139,57 +153,75 @@
 </head>
 <body>
 
-<!-- Menu flutuante -->
+<!-- Menu de Navegação -->
 <div class="navbar">
-    <a href="#tema" class="active">Tema</a>
-    <a href="#premium">Premium</a>
-    <a href="#comandos">Comandos</a>
-    <a href="#termos">Termos</a>
-    <a href="#forum">Fórum</a>
-    <a href="#contato">Contato</a>
+    <div class="container">
+        <div class="logo">Cross Trade Light</div>
+        <nav>
+            <a href="#home">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#recursos">Recursos</a>
+            <a href="#avaliacoes">Avaliações</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </div>
 </div>
 
-<header>
-    <img src="https://imgur.com/Y37000m.png" alt="Logo Cross Trade Light" class="logo">
-    <h1>Cross Trade Light</h1>
-</header>
+<!-- Banner -->
+<section class="banner">
+    <div>
+        <h1>Bem-vindo ao Cross Trade Light</h1>
+        <p>A maior comunidade para trocas e negociações seguras!</p>
+    </div>
+</section>
 
-<!-- Conteúdo principal -->
+<!-- Conteúdo Principal -->
 <div class="content">
-    <h2>Bem-vindo ao Cross Trade Light!</h2>
-    <p>O Cross Trade Light é um servidor de Discord focado em negociações e trocas dentro de um ambiente seguro e organizado. Junte-se a uma comunidade ativa de jogadores!</p>
+    <section id="sobre">
+        <h2>Sobre Nós</h2>
+        <p>O Cross Trade Light é um servidor de Discord dedicado a ajudar jogadores de Blox Fruits a realizar trocas seguras, participar de eventos e fazer parte de uma comunidade ativa e confiável.</p>
+    </section>
 
-    <p>Recursos principais:</p>
-    <ul>
-        <li>Trocas seguras e rápidas</li>
-        <li>Eventos e prêmios exclusivos</li>
-        <li>Canais de comunicação eficientes</li>
-    </ul>
-</div>
+    <section id="recursos">
+        <h2>Recursos</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Trocas Seguras</h3>
+                <p>Nossa equipe garante um ambiente seguro para todas as negociações.</p>
+            </div>
+            <div class="card">
+                <h3>Eventos Exclusivos</h3>
+                <p>Participe de eventos emocionantes e ganhe prêmios incríveis!</p>
+            </div>
+            <div class="card">
+                <h3>Comunidade Ativa</h3>
+                <p>Junte-se a mais de 2.000 membros no Discord e compartilhe experiências.</p>
+            </div>
+        </div>
+    </section>
 
-<!-- Avaliações -->
-<div class="forum">
-    <h3>Avaliações</h3>
-
-    <div class="post">
-        <span class="author">victor219374:</span>
-        <p class="content">O servidor é muito bom e confiável. Recomendo entrar, vocês vão gostar!</p>
-    </div>
-
-    <div class="post">
-        <span class="author">tizer_games._55119:</span>
-        <p class="content">Eu tenho algumas skins sobrando! Troquei e ganhei muitas mais, as pessoas são muito legais!</p>
-    </div>
-
-    <div class="post">
-        <span class="author">pablokoha:</span>
-        <p class="content">Ótimo servidor! As trocas são super fáceis e seguras aqui.</p>
-    </div>
+    <section id="avaliacoes">
+        <h2>Avaliações</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Victor219374</h3>
+                <p>"O servidor é muito bom e confiável. Recomendo entrar, vocês vão gostar!"</p>
+            </div>
+            <div class="card">
+                <h3>Tizer_games._55119</h3>
+                <p>"Eu tenho algumas skins sobrando! Troquei e ganhei muitas mais, as pessoas são muito legais!"</p>
+            </div>
+            <div class="card">
+                <h3>Pablokoha</h3>
+                <p>"Ótimo servidor! As trocas são super fáceis e seguras aqui."</p>
+            </div>
+        </div>
+    </section>
 </div>
 
 <!-- Rodapé -->
 <footer>
-    <p>&copy; 2025 Cross Trade Light | <a href="https://discord.gg/gyYJdG84">Entre no servidor do Discord</a></p>
+    <p>&copy; 2025 Cross Trade Light | <a href="https://discord.gg/gyYJdG84">Entre no Discord</a></p>
 </footer>
 
 </body>

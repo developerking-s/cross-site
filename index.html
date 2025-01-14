@@ -20,20 +20,21 @@
             padding-top: 50px; /* Espaço para o menu fixo */
         }
 
-        /* Menu de Navegação Moderno */
+        /* Menu Flutuante Transparente */
         .navbar {
             position: fixed;
-            top: 0;
+            top: -60px; /* Inicialmente fora da tela */
             left: 0;
             width: 100%;
-            background-color: #0056b3;
+            background-color: rgba(0, 86, 179, 0.9); /* Azul transparente */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
             z-index: 1000;
             display: flex;
             justify-content: center;
-            padding: 5px 0; /* Diminuir o padding */
+            padding: 10px 0;
             flex-wrap: wrap;
             box-sizing: border-box;
+            transition: top 0.3s ease; /* Animação suave para o menu entrar */
         }
 
         .navbar ul {
@@ -44,15 +45,15 @@
         }
 
         .navbar li {
-            margin: 0 10px;
+            margin: 0 20px;
             position: relative;
         }
 
         .navbar a {
             text-decoration: none;
             color: white;
-            font-size: 1em;
-            padding: 5px 10px;
+            font-size: 1.1em;
+            padding: 5px 15px;
             transition: all 0.3s ease;
         }
 
@@ -351,6 +352,18 @@
 <footer>
     <p>&copy; 2025 Cross Trade Light | <a href="https://discord.gg/gyYJdG84">Entre no Discord</a></p>
 </footer>
+
+<script>
+    // Função para exibir o menu quando rolar a página
+    window.onscroll = function() {
+        var navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.style.top = '0';
+        } else {
+            navbar.style.top = '-60px';
+        }
+    };
+</script>
 
 </body>
 </html>

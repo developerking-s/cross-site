@@ -19,6 +19,34 @@
             overflow-x: hidden;
         }
 
+        /* Página de carregamento */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #0056b3;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #preloader .loader {
+            border: 5px solid #fff;
+            border-top: 5px solid #ffdd40;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
         /* Menu Navegação Moderno */
         .navbar {
             position: fixed;
@@ -98,11 +126,26 @@
         .banner h1 {
             font-size: 3em;
             z-index: 1;
+            color: #ffdd40;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
         .banner p {
             font-size: 1.5em;
             z-index: 1;
+            color: #cce4ff;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Conteúdo Geral */
@@ -187,9 +230,55 @@
         footer a:hover {
             text-decoration: underline;
         }
+
+        /* Estilo para os Embeds */
+        .embed {
+            background-color: #fff;
+            border: 2px solid #ffdd40;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInEmbed 0.8s ease forwards;
+        }
+
+        .embed:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .embed:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .embed h3 {
+            color: #0056b3;
+            margin-bottom: 15px;
+        }
+
+        .embed p {
+            font-size: 1.1em;
+            line-height: 1.6em;
+            color: #555;
+        }
+
+        @keyframes fadeInEmbed {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
+<!-- Página de carregamento -->
+<div id="preloader">
+    <div class="loader"></div>
+</div>
 
 <!-- Menu de Navegação -->
 <div class="navbar">
@@ -212,41 +301,18 @@
 
 <!-- Conteúdo Principal -->
 <div class="content">
-    <section id="sobre">
-        <h2>Sobre Nós</h2>
-        <p>O Cross Trade Light é um servidor de Discord dedicado a ajudar jogadores de Blox Fruits a realizar trocas seguras, participar de eventos e fazer parte de uma comunidade ativa e confiável.</p>
-    </section>
-
-    <section id="recursos">
-        <h2>Recursos</h2>
-        <div class="cards">
-            <div class="card">
-                <h3>Trocas Seguras</h3>
-                <p>Nossa equipe garante um ambiente seguro para todas as negociações.</p>
-            </div>
-            <div class="card">
-                <h3>Eventos Exclusivos</h3>
-                <p>Participe de eventos emocionantes e ganhe prêmios incríveis!</p>
-            </div>
-            <div class="card">
-                <h3>Comunidade Ativa</h3>
-                <p>Junte-se a mais de 2.000 membros no Discord e compartilhe experiências.</p>
-            </div>
-        </div>
-    </section>
-
     <section id="avaliacoes">
         <h2>Avaliações</h2>
         <div class="cards">
-            <div class="card">
+            <div class="embed">
                 <h3>Victor219374</h3>
                 <p>"O servidor é muito bom e confiável. Recomendo entrar, vocês vão gostar!"</p>
             </div>
-            <div class="card">
+            <div class="embed">
                 <h3>Tizer_games._55119</h3>
                 <p>"Eu tenho algumas skins sobrando! Troquei e ganhei muitas mais, as pessoas são muito legais!"</p>
             </div>
-            <div class="card">
+            <div class="embed">
                 <h3>Pablokoha</h3>
                 <p>"Ótimo servidor! As trocas são super fáceis e seguras aqui."</p>
             </div>
@@ -258,6 +324,12 @@
 <footer>
     <p>&copy; 2025 Cross Trade Light | <a href="https://discord.gg/gyYJdG84">Entre no Discord</a></p>
 </footer>
+
+<script>
+    window.onload = function() {
+        document.getElementById("preloader").style.display = "none";
+    };
+</script>
 
 </body>
 </html>

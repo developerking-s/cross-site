@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta property="og:title" content="Cross Trade Light - Loja">
+    <meta property="og:title" content="CF-Trade - Loja">
   <meta property="og:description" content="Veja a nossa lojinha os benefícios e mais sobre">
   <meta property="og:image" content="https://imgur.com/Y37000m.png">
-  <meta name="theme-color" content="#0056b3">
-  <meta charset="UTF-8">
+  <meta name="theme-color" content="#0056b3"
+<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Loja CF-Trade</title>
   <style>
@@ -14,75 +14,51 @@
       font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      color: #333;
       background-color: #f4f9ff;
-      text-align: center;
+      color: #333;
     }
 
-    /* Cabeçalho */
     header {
       background-color: #004080;
       color: #fff;
-      padding: 20px 0;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
     }
 
     header h1 {
       margin: 0;
-      font-size: 28px;
     }
 
-    /* Seção de benefícios */
-    .benefits {
-      margin: 20px auto;
-      padding: 20px;
+    .benefits, .payment-modal, .card-details-modal {
       max-width: 800px;
-      background-color: #ffffff;
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 20px;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     .benefits h2 {
       color: #004080;
-      font-size: 24px;
-      margin-bottom: 15px;
     }
 
-    .benefits ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    .benefits ul li {
-      margin: 10px 0;
-      font-size: 18px;
-      line-height: 1.5;
-      text-align: left;
-    }
-
-    .benefits ul li strong {
-      color: #004080;
-    }
-
-    /* Botão de ação */
     .cta-button {
+      text-align: center;
       margin-top: 20px;
     }
 
     .cta-button a {
-      text-decoration: none;
-      color: #fff;
       background-color: #004080;
-      padding: 12px 30px;
+      color: #fff;
+      padding: 10px 20px;
       border-radius: 5px;
+      text-decoration: none;
       font-size: 18px;
-      transition: transform 0.3s ease, background-color 0.3s ease;
       cursor: pointer;
     }
 
     .cta-button a:hover {
       background-color: #0066cc;
-      transform: scale(1.05);
     }
 
     /* Modal */
@@ -98,46 +74,76 @@
     }
 
     .modal-content {
+      position: relative;
       background-color: #fff;
       padding: 20px;
       border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      margin: 100px auto;
       width: 90%;
       max-width: 500px;
-      margin: 100px auto;
-      text-align: left;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
     .modal-content h2 {
-      color: #004080;
       margin-top: 0;
     }
 
-    .modal-content .payment-options img {
+    .close-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #f44336;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .payment-options img {
       width: 50px;
       margin: 10px;
       cursor: pointer;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .modal-content .payment-options img:hover {
+    .payment-options img:hover {
       transform: scale(1.1);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
-    .close-button {
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    form label {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    form input {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form button {
+      margin-top: 20px;
       background-color: #004080;
       color: #fff;
       border: none;
+      padding: 10px;
       border-radius: 5px;
-      padding: 10px 20px;
+      font-size: 18px;
       cursor: pointer;
-      font-size: 16px;
-      margin-top: 20px;
-      transition: background-color 0.3s ease;
     }
 
-    .close-button:hover {
+    form button:hover {
       background-color: #0066cc;
     }
   </style>
@@ -150,42 +156,70 @@
   <section class="benefits">
     <h2>Benefícios do Premium</h2>
     <ul>
-      <li>🌟 <strong>XP Duplo Permanente:</strong> Suba de nível mais rápido e alcance o topo!</li>
-      <li>🎉 <strong>Acesso Exclusivo a Eventos:</strong> Participe de eventos únicos com recompensas incríveis.</li>
-      <li>📦 <strong>Slots Extras de Itens:</strong> Armazene mais frutas, armas e acessórios.</li>
-      <li>💬 <strong>Título Especial no Chat:</strong> Exiba sua exclusividade para todos os jogadores.</li>
-      <li>💰 <strong>Descontos Exclusivos na Loja:</strong> Economize nas suas compras dentro do jogo.</li>
+      <li><strong>XP Duplo Permanente:</strong> Suba de nível mais rápido.</li>
+      <li><strong>Acesso Exclusivo a Eventos:</strong> Participe de eventos únicos.</li>
+      <li><strong>Slots Extras de Itens:</strong> Armazene mais itens.</li>
+      <li><strong>Título Especial no Chat:</strong> Mostre sua exclusividade.</li>
     </ul>
     <div class="cta-button">
-      <a onclick="openModal()">Comprar Premium</a>
+      <a onclick="openPaymentModal()">Comprar Premium</a>
     </div>
   </section>
 
-  <!-- Modal para pagamento -->
+  <!-- Modal para escolha de pagamento -->
   <div class="modal" id="paymentModal">
     <div class="modal-content">
-      <h2>Escolha sua Forma de Pagamento</h2>
+      <button class="close-button" onclick="closePaymentModal()">×</button>
+      <h2>Escolha a Forma de Pagamento</h2>
       <div class="payment-options">
-        <img src="https://img.icons8.com/color/48/paypal.png" alt="PayPal">
-        <img src="https://img.icons8.com/color/48/mastercard.png" alt="MasterCard">
-        <img src="https://img.icons8.com/color/48/visa.png" alt="Visa">
-        <img src="https://img.icons8.com/color/48/pix.png" alt="Pix">
+        <img src="https://img.icons8.com/color/48/paypal.png" alt="PayPal" onclick="openCardDetailsModal()">
+        <img src="https://img.icons8.com/color/48/mastercard.png" alt="MasterCard" onclick="openCardDetailsModal()">
+        <img src="https://img.icons8.com/color/48/visa.png" alt="Visa" onclick="openCardDetailsModal()">
       </div>
-      <button class="close-button" onclick="closeModal()">Fechar</button>
     </div>
   </div>
 
-  <footer>
-    <p>&copy; 2025 CF-Trade - Todos os direitos reservados.</p>
-  </footer>
+  <!-- Modal para detalhes do cartão -->
+  <div class="modal" id="cardDetailsModal">
+    <div class="modal-content">
+      <button class="close-button" onclick="closeCardDetailsModal()">×</button>
+      <h2>Insira os Dados do Cartão</h2>
+      <form id="paymentForm" onsubmit="submitPayment(event)">
+        <label for="cardNumber">Número do Cartão</label>
+        <input type="text" id="cardNumber" placeholder="Digite o número do cartão" required>
+        <label for="cardName">Nome no Cartão</label>
+        <input type="text" id="cardName" placeholder="Digite o nome" required>
+        <label for="expiryDate">Validade</label>
+        <input type="text" id="expiryDate" placeholder="MM/AA" required>
+        <label for="cvv">CVV</label>
+        <input type="text" id="cvv" placeholder="CVV" required>
+        <button type="submit">Pagar</button>
+      </form>
+    </div>
+  </div>
 
   <script>
-    function openModal() {
+    function openPaymentModal() {
       document.getElementById('paymentModal').style.display = 'block';
     }
 
-    function closeModal() {
+    function closePaymentModal() {
       document.getElementById('paymentModal').style.display = 'none';
+    }
+
+    function openCardDetailsModal() {
+      closePaymentModal();
+      document.getElementById('cardDetailsModal').style.display = 'block';
+    }
+
+    function closeCardDetailsModal() {
+      document.getElementById('cardDetailsModal').style.display = 'none';
+    }
+
+    function submitPayment(event) {
+      event.preventDefault();
+      alert('Pagamento realizado com sucesso!');
+      closeCardDetailsModal();
     }
   </script>
 </body>

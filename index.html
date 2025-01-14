@@ -47,7 +47,7 @@
             to { transform: rotate(360deg); }
         }
 
-        /* Menu Navegação Moderno */
+        /* Menu de Navegação Moderno */
         .navbar {
             position: fixed;
             top: 0;
@@ -58,6 +58,7 @@
             display: flex;
             justify-content: center;
             padding: 10px 0;
+            flex-wrap: wrap;
         }
 
         .navbar ul {
@@ -272,6 +273,38 @@
                 transform: translateY(0);
             }
         }
+
+        /* Responsividade para dispositivos móveis */
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .navbar li {
+                margin: 10px 0;
+            }
+
+            .banner h1 {
+                font-size: 2.5em;
+            }
+
+            .banner p {
+                font-size: 1.2em;
+            }
+
+            .content {
+                padding: 30px 10px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .embed {
+                margin-bottom: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -301,6 +334,29 @@
 
 <!-- Conteúdo Principal -->
 <div class="content">
+    <section id="sobre">
+        <h2>Sobre Nós</h2>
+        <p>O Cross Trade Light é um servidor de Discord dedicado a ajudar jogadores de Blox Fruits a realizar trocas seguras, participar de eventos e fazer parte de uma comunidade ativa e confiável.</p>
+    </section>
+
+    <section id="recursos">
+        <h2>Recursos</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Trocas Seguras</h3>
+                <p>Nossa equipe garante um ambiente seguro para todas as negociações.</p>
+            </div>
+            <div class="card">
+                <h3>Eventos Exclusivos</h3>
+                <p>Participe de eventos emocionantes e ganhe prêmios incríveis!</p>
+            </div>
+            <div class="card">
+                <h3>Comunidade Ativa</h3>
+                <p>Junte-se a mais de 2.000 membros no Discord e compartilhe experiências.</p>
+            </div>
+        </div>
+    </section>
+
     <section id="avaliacoes">
         <h2>Avaliações</h2>
         <div class="cards">

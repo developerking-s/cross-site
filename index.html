@@ -16,9 +16,10 @@
             padding: 0;
             background-color: #f4f4f9;
             color: #333;
+            overflow-x: hidden;
         }
 
-        /* Menu Navegação */
+        /* Menu Navegação Moderno */
         .navbar {
             position: fixed;
             top: 0;
@@ -26,34 +27,49 @@
             background-color: #0056b3;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
             z-index: 1000;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
         }
 
-        .navbar .container {
+        .navbar ul {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 10px 20px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar li {
+            margin: 0 15px;
+            position: relative;
         }
 
         .navbar a {
             text-decoration: none;
-            color: #fff;
-            font-size: 1em;
-            margin: 0 15px;
+            color: white;
+            font-size: 1.2em;
             padding: 8px 12px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .navbar a:hover {
-            background-color: #0073e6;
+            color: #ffdd40;
         }
 
-        .navbar .logo {
-            font-size: 1.5em;
-            font-weight: bold;
+        .navbar li::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -5px;
+            width: 0;
+            height: 3px;
+            background-color: #ffdd40;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .navbar li:hover::after {
+            width: 100%;
         }
 
         /* Banner */
@@ -75,7 +91,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.6);
             z-index: 0;
         }
 
@@ -89,7 +105,7 @@
             z-index: 1;
         }
 
-        /* Conteúdo */
+        /* Conteúdo Geral */
         .content {
             padding: 50px 20px;
             text-align: center;
@@ -106,7 +122,7 @@
             line-height: 1.6em;
         }
 
-        /* Cards */
+        /* Cards com Animação */
         .cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -120,6 +136,17 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             padding: 20px;
             text-align: left;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .card:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .card:nth-child(3) {
+            animation-delay: 0.6s;
         }
 
         .card h3 {
@@ -130,6 +157,17 @@
         .card p {
             font-size: 1em;
             line-height: 1.5em;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Rodapé */
@@ -155,16 +193,13 @@
 
 <!-- Menu de Navegação -->
 <div class="navbar">
-    <div class="container">
-        <div class="logo">Cross Trade Light</div>
-        <nav>
-            <a href="#home">Início</a>
-            <a href="#sobre">Sobre</a>
-            <a href="#recursos">Recursos</a>
-            <a href="#avaliacoes">Avaliações</a>
-            <a href="#contato">Contato</a>
-        </nav>
-    </div>
+    <ul>
+        <li><a href="#home">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#recursos">Recursos</a></li>
+        <li><a href="#avaliacoes">Avaliações</a></li>
+        <li><a href="#contato">Contato</a></li>
+    </ul>
 </div>
 
 <!-- Banner -->

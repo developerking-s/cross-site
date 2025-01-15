@@ -5,9 +5,9 @@
     <meta property="og:description" content="Venha já se juntar a nossa equipa staff o que está a espera?">
     <meta property="og:image" content="https://imgur.com/tmqzGam.png">
     <meta name="theme-color" content="#111">
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário</title>
+    <title>CF-Trade - Formulário</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,6 +15,30 @@
             color: #333;
             margin: 0;
             padding: 20px;
+        }
+        .container {
+            text-align: center;
+            padding: 50px;
+        }
+        .container h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .container button {
+            background-color: #2563eb;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+        .container button:hover {
+            background-color: #1e3a8a;
+        }
+        .container p {
+            font-size: 1.1em;
+            margin: 20px 0;
         }
         form {
             background-color: #fff;
@@ -57,34 +81,51 @@
 </head>
 <body>
 
-<h1 style="text-align: center;">Formulário Staff</h1>
+<div class="container" id="intro">
+    <h1>CF-Trade</h1>
+    <p>Bem-vindo ao formulário da nossa equipe staff!</p>
+    <p><strong>Requisitos para entrar:</strong></p>
+    <ul style="list-style: none; padding: 0; font-size: 1.1em;">
+        <li>- Ter pelo menos 13 anos</li>
+        <li>- Ter maturidade</li>
+        <li>- Respeitar todos</li>
+    </ul>
+    <button onclick="showForm()">Começar</button>
+</div>
 
-<!-- Formulário de contato -->
-<form action="https://formsubmit.co/renatofernandesjorge11@gmail.com" method="POST">
-    <label for="nome">Qual o seu nome?</label>
-    <input type="text" id="nome" name="nome" required>
-   
- <label for="id">Qual o seu id no discord?</label>
-    <input
-<input type="text" id="id" name="id" required>
+<div id="form-section" style="display: none;">
+    <h1 style="text-align: center;">Formulário Staff</h1>
+    <form action="https://formsubmit.co/renatofernandesjorge11@gmail.com" method="POST">
+        <label for="nome">Qual o seu nome?</label>
+        <input type="text" id="nome" name="nome" required>
 
-<label for="idade">Qual a sua idade?</label>
-    <input type="number" id="idade" name="idade" required>
+        <label for="id">Qual o seu id no Discord?</label>
+        <input type="text" id="id" name="id" required>
 
-    <label for="motivacao">Por que queres entrar na staff?</label>
-    <textarea id="motivacao" name="motivacao" rows="4" required></textarea>
+        <label for="idade">Qual a sua idade?</label>
+        <input type="number" id="idade" name="idade" required>
 
-    <label for="habilidades">Sabes mexer com o quê? (ex: Discord, moderar chats, etc.)</label>
-    <textarea id="habilidades" name="habilidades" rows="4" required></textarea>
+        <label for="motivacao">Por que queres entrar na staff?</label>
+        <textarea id="motivacao" name="motivacao" rows="4" required></textarea>
 
-    <button type="submit">Enviar</button>
-</form>
+        <label for="habilidades">Sabes mexer com o quê? (ex: Discord, moderar chats, etc.)</label>
+        <textarea id="habilidades" name="habilidades" rows="4" required></textarea>
 
-<div class="message" id="message">Formulário enviado com sucesso!</div>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <div class="message" id="message">Formulário enviado com sucesso!</div>
+</div>
 
 <script>
+    // Mostra o formulário e esconde a página inicial
+    function showForm() {
+        document.getElementById('intro').style.display = 'none';
+        document.getElementById('form-section').style.display = 'block';
+    }
+
     // Exibe mensagem de sucesso após envio
-    document.querySelector("form").addEventListener("submit", function() {
+    document.querySelector("form").addEventListener("submit", function () {
         document.getElementById("message").style.display = "block";
     });
 </script>

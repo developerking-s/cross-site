@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denúncia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
+        input, textarea, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulário de Denúncia</h1>
+    <form action="mailto: renafernandesjorge11@gmail.com" method="POST" enctype="text/plain">
+        <label for="nome">Seu Nome (opcional):</label>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+
+        <label for="email">Seu E-mail (opcional):</label>
+        <input type="email" id="email" name="email" placeholder="Digite seu e-mail">
+
+        <label for="assunto">Assunto da Denúncia:</label>
+        <select id="assunto" name="assunto" required>
+            <option value="">Selecione</option>
+            <option value="scam">Scam</option>
+            <option value="roubo">Roubo</option>
+            <option value="violencia">Violência</option>
+            <option value="outro">Outro</option>
+        </select>
+
+        <label for="descricao">Descrição da Denúncia:</label>
+        <textarea id="descricao" name="descricao" rows="5" placeholder="Descreva o ocorrido" required></textarea>
+
+        <button type="submit">Enviar Denúncia</button>
+    </form>
+</body>
+</html>
